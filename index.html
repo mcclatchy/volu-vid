@@ -5,6 +5,7 @@
     <title>RGBD AFRAME COMPONENT</title>
     <meta name="description" content="This is a work in progress: Demo of way to use DepthKit and aFrame.io together">
     <meta property="og:image" content="http://sandbox.video/aframe-rgbd/icon.jpg">
+	  
     <!-- YOU MUST INCLUDE these two shaders. Seems easiest to leave them in the HTML for now -->
     <script id="vs" type="x-shader/x-vertex">
       vec3 rgb2hsl( vec3 color ) {
@@ -121,36 +122,6 @@
 
     <script src="aframe-master.min.js"></script>
     <script src="RGBDVideo-component.js"></script>
-
-
-    <script type = "text/javascript">
-
-    AFRAME.registerComponent('rgbd-video', {
-      schema: {
-        name: {type: 'string', default: 'fanTest'},
-
-        depthFocalLengthX: {type: 'number', default: 365.2185974121094},
-        depthFocalLengthY: {type: 'number', default: 365.2185974121094},
-
-        depthImageSizeX: {type: 'number', default: 512},
-        depthImageSizeY: {type: 'number', default: 424},
-
-        depthPrincipalPointX: {type: 'number', default: 257.6430969238281},
-        depthPrincipalPointY: {type: 'number', default: 209.3957977294922},
-
-        farClip: {type: 'number', default: 1204.192016601562},
-        nearClip: {type: 'number', default: 434.166748046875}
-      },
-
-      update: function() {
-      //  var el = document.querySelector('#my-volumetric-video');
-        var video = new RGBDVideo(this.data);
-        this.el.setObject3D('mesh', video);
-	      video.play();
-      },
-
-    });
-    </script>
 
   </head>
   <body>
