@@ -1,12 +1,12 @@
 ## aframe-volu-vid-component
 
-Volumetric Video component for [A-Frame](https://aframe.io) , created with DepthKit in Mind.
+Volumetric Video component for [A-Frame](https://aframe.io) , created using [DepthKit.js](https://github.com/SimileSystems/DepthKitJS) h/t SimileSystems
 
 ### Properties
 
 | Property              | Description               | Default Values    |
 |-----------------------|---------------------------|-------------------|
-| name                  | filename w/o ext          | video             |
+| name                  | filename w/o ext          | 'video'             |
 | depthFocalLengthX     | Unknown DepthKit Var*      | 365.2185974121094 |
 | depthFocalLengthY     | Unknown DepthKit Var*      | 365.2185974121094 |
 | depthImageSizeX       | Full Width of Webm Frame  | 512               |
@@ -16,7 +16,7 @@ Volumetric Video component for [A-Frame](https://aframe.io) , created with Depth
 | farClip               | Unknown DepthKit Var*      | 1204.192016601562 |
 | nearClip              | Unknown DepthKit Var*      | 434.166748046875  |
 
-*These should be assigned based on the _meta.txt file created by DepthKit
+*These should be assigned based on the "_meta.txt" file created by DepthKit
 
 ### Usage
 
