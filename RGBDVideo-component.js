@@ -1,4 +1,35 @@
 /**
+ * Simple Component Registry
+ */ 
+
+AFRAME.registerComponent('rgbd-video', {
+      schema: {
+        name: {type: 'string', default: 'fanTest'},
+
+        depthFocalLengthX: {type: 'number', default: 365.2185974121094},
+        depthFocalLengthY: {type: 'number', default: 365.2185974121094},
+
+        depthImageSizeX: {type: 'number', default: 512},
+        depthImageSizeY: {type: 'number', default: 424},
+
+        depthPrincipalPointX: {type: 'number', default: 257.6430969238281},
+        depthPrincipalPointY: {type: 'number', default: 209.3957977294922},
+
+        farClip: {type: 'number', default: 1204.192016601562},
+        nearClip: {type: 'number', default: 434.166748046875}
+      },
+
+      update: function() {
+      //  var el = document.querySelector('#my-volumetric-video');
+        var video = new RGBDVideo(this.data);
+        this.el.setObject3D('mesh', video);
+	      video.play();
+      },
+
+    });
+
+
+/**
  * @author mrdoob / http://mrdoob.com
  * @modified by obviousjim & kkukshtel / simile
  * @modified by BCatDC / for Aframe.io
