@@ -1,8 +1,8 @@
-## aframe-volu-vid-component
+# aframe-volu-vid-component
 
 Volumetric Video component for [A-Frame](https://aframe.io) , created using [DepthKit.js](https://github.com/SimileSystems/DepthKitJS) h/t SimileSystems
 
-### Properties
+## Properties
 
 | Property              | Description               | Default Values    |
 |-----------------------|---------------------------|-------------------|
@@ -16,9 +16,9 @@ Volumetric Video component for [A-Frame](https://aframe.io) , created using [Dep
 | farClip               | Unknown DepthKit Var*      | 1204.192016601562 |
 | nearClip              | Unknown DepthKit Var*      | 434.166748046875  |
 
-*These should be assigned based on the "_meta.txt" file created by DepthKit
+*These should be assigned based on the `_meta.txt` file created by DepthKit
 
-### Usage
+## Usage
 
 ```html
 <head>
@@ -130,6 +130,6 @@ Volumetric Video component for [A-Frame](https://aframe.io) , created using [Dep
   </a-scene>
 </body>
 ```
-### Video Files
-Videos should be exported per-pixel from DepthKit, then converted to .WebM and placed in a directory called 'rgbd_files' 
+## Video Files
+Videos should be exported per-pixel from DepthKit, then converted to .WebM and placed in a directory called `rgbd_files`. 
 Follow this great tutorial for details on [exporting from DepthKit](https://vimeo.com/123520067)
