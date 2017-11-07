@@ -2,6 +2,13 @@
 
 Volumetric Video component for [A-Frame](https://aframe.io) , created using [DepthKit.js](https://github.com/SimileSystems/DepthKitJS) h/t SimileSystems
 
+## What it does
+
+* Helps create an <a-entity> for [A-Frame](https://github.com/aframevr/aframe/). The entity holds a [DepthKit](http://DepthKit.com) volumetric video
+* Shaders extrude the top (colored) half of a .webm video, according to the lower (heat-map style) half of the video
+* Current iteration plays the video in a loop
+* Current iteration plays video rotated 90° clockwise on the z-axis
+
 ## Properties
 
 | Property              | Description               | Default Values    |
@@ -19,16 +26,21 @@ Volumetric Video component for [A-Frame](https://aframe.io) , created using [Dep
 *These should be assigned based on the `_meta.txt` file created by DepthKit
 
 ## Usage
+On your page, you must include:
+* The lastest release of aframe.js,
+* the volu-vid component,
+* the vertex shader,
+* and the fragment shader.
+
+Place your .WebM DepthKit video in a directory called "rgbd_files." You'll reference it using "name:file_name" (without extension) in the <a-entity>. 
 
 ```html
 <head>
   <title>My A-Frame Scene</title>
   <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-  <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
-</head>
-
-<!-- The following two shaders must be included. It seems easiest to leave them in the HTML for now -->
-    <script id="vs" type="x-shader/x-vertex">
+  <script src="../dist/volu-vid-component.js"></script>
+  <!-- The following two shaders must be included. It seems easiest to leave them in the HTML for now -->
+  <script id="vs" type="x-shader/x-vertex">
       vec3 rgb2hsl( vec3 color ) {
         float h = 0.0;
         float s = 0.0;
@@ -113,7 +125,7 @@ Volumetric Video component for [A-Frame](https://aframe.io) , created using [Dep
         gl_FragColor = color;
       }
     </script>
-
+</head>
 <body>
   <a-scene>
   <a-entity rgbd-video="
