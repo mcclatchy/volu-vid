@@ -1,0 +1,19 @@
+<!--
+
+This is the fragment shader from DepthKit.JS
+Place it in the header on your aframe page, it's referenced by volu-vid as "vs"
+
+-->
+
+    <script id="fs" type="x-shader/x-fragment">
+      uniform sampler2D map;
+      uniform float opacity;
+      varying float visibility;
+      varying vec2 vUv;
+      void main() {
+        if ( visibility < 0.75 ) discard;
+        vec4 color = texture2D( map, vUv + vec2(0.0, 0.5) );
+        color.w = opacity;
+        gl_FragColor = color;
+      }
+    </script>
