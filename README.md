@@ -3,9 +3,9 @@
 Volumetric Video component for [A-Frame](https://aframe.io) , created using [DepthKit.js](https://github.com/SimileSystems/DepthKitJS) h/t SimileSystems
 
 ## What it does
+Volu-Vid Makes it easy to ADD Volumetric Video to your WebVR project [DEMO](http://sandbox.video/aframe-rgbd/examples/example_1.html)
 
-[DEMO](http://sandbox.video/aframe-rgbd/examples/example_1.html)
-
+Specifically
 * Helps create an <a-entity> for [A-Frame](https://github.com/aframevr/aframe/). The entity holds a [DepthKit](http://DepthKit.com) volumetric video
 * Shaders extrude the top (colored) half of a .webm video, according to the lower (heat-map style) half of the video
 * Current iteration plays the video in a loop
